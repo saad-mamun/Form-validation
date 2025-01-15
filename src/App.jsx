@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card2 from './components/Card2';
 import Api from './components/Api';
+import Header from './conponents2/Header';
+import Section from './conponents2/Section';
+import Footer from './conponents2/Footer';
+import { DataContext } from './context/UserContext';
 
 
 // Props er niom 
@@ -44,6 +48,10 @@ const users = [
 ];
 
 const App = () => {
+
+  const data = useContext(DataContext)
+  
+
   return (
     <>
       {/* <div className='p-10'>
@@ -62,8 +70,14 @@ const App = () => {
         })}
       </div> */}
 
-      <div className='p-12'>
+      {/* <div className='p-12'>
         <Api />
+      </div> */}
+      <div>
+        <h1>This is app {data.username} </h1>
+        <Header/>
+        <Section/>
+        <Footer/>
       </div>
     </>
   );

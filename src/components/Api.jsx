@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 const Api = () => {
+
   const [data, setData] = useState([]);
 
   const getData = async () => {
@@ -8,8 +9,16 @@ const Api = () => {
       "https://picsum.photos/v2/list?page=2&limit=100"
     );
     setData(response.data);
-    console.log(data);
   };
+
+// button click na korei data show korte chile 
+
+// useEffect(()=>{
+//     getData()
+// },[])
+
+
+
 
   return (
     <div>
