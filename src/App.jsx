@@ -1,35 +1,70 @@
+import React from 'react'
+import Card2 from './components/Card2';
+import Api from './components/Api';
 
-import React, { useState } from 'react'
 
-function App() {
+// Props er niom 
 
-  const [username, setUsername] = useState('')
+const users = [
+  {
+    name: "Alice Johnson",
+    city: "New York",
+    age: 28,
+    profession: "Software Engineer",
+    image: "https://example.com/images/alice.jpg",
+  },
+  {
+    name: "Bob Smith",
+    city: "Los Angeles",
+    age: 35,
+    profession: "Graphic Designer",
+    image: "https://example.com/images/bob.jpg",
+  },
+  {
+    name: "Clara Lee",
+    city: "Chicago",
+    age: 24,
+    profession: "Data Analyst",
+    image: "https://example.com/images/clara.jpg",
+  },
+  {
+    name: "David Brown",
+    city: "San Francisco",
+    age: 42,
+    profession: "Product Manager",
+    image: "https://example.com/images/david.jpg",
+  },
+  {
+    name: "Emily Davis",
+    city: "Austin",
+    age: 30,
+    profession: "Marketing Specialist",
+    image: "https://example.com/images/emily.jpg",
+  },
+];
 
-const submitHandeler = (e) => {
-  e.preventDefault()
-  console.log(username)
-  setUsername('')
-}
-
+const App = () => {
   return (
-    <div className='container mx-auto mt-10'>
-      <form 
-      onSubmit={(e)=>
-        submitHandeler(e)
-      }
-      className='space-y-3'>
-        <input 
-        value={username}
-        onChange={(e)=>{
-          setUsername(e.target.value)
-        }}
-        type="text" 
-        placeholder='Enter your name'
-        className='px-4 py-2 focus:outline-none ring-2 rounded-lg' /> <br/>
-        <button className='px-4 py-2 ring-2 rounded-lg bg-green-600 text-white font-semibold'>Submit</button>
-      </form>
-    </div>
-  )
+    <>
+      {/* <div className='p-10'>
+        <Card user="Liton" city="Rajshahi" age="21" />
+      </div> */}
+      
+      {/* <div className="p-10 grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {users.map(function(elem, idx){
+          return <Card2
+           key={idx}
+            username={elem.name} 
+            age={elem.age} 
+            city={elem.city} 
+            profession={elem.profession}
+             photo={elem.image} />
+        })}
+      </div> */}
+
+      <Api/>
+    </>
+  );
 }
 
 export default App
