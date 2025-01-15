@@ -49,7 +49,7 @@ const App = () => {
       {/* <div className='p-10'>
         <Card user="Liton" city="Rajshahi" age="21" />
       </div> */}
-      
+
       {/* <div className="p-10 grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {users.map(function(elem, idx){
           return <Card2
@@ -62,7 +62,9 @@ const App = () => {
         })}
       </div> */}
 
-      <Api/>
+      <div className='p-12'>
+        <Api />
+      </div>
     </>
   );
 }
